@@ -22,12 +22,17 @@ a {
     text-decoration: none;
 }
 
+a:focus {
+    outline: 0;
+}
+
+/* Fixing on-back link post selected */
 a:hover {
     color: #1d1d1d;
 }
 
 li:hover {
-    background-color: #eaeaea;
+    background-color: rgb(0, 0, 0, 0.05);
 }
 
 p {
@@ -101,17 +106,6 @@ ul {
 
 /*#endregion*/
 
-/*#region Info data*/
-.info-img {
-    border-radius: 50%;
-    width: 150px;
-    padding-right: 10px;
-    margin-top: -32px;
-    margin-bottom: 30px;
-}
-
-/*#endregion*/
-
 /*#region Post data*/
 .post-list {
     list-style: none;
@@ -154,6 +148,12 @@ p.post-description {
     display: inline-block;
     font-size: 18px;
     padding-top: 8px;
+}
+
+/* Making the whole li as link */
+.post a {
+    text-decoration: none;
+    display: block;
 }
 
 .post-content-separator {
