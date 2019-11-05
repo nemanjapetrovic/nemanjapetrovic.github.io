@@ -59,7 +59,7 @@ ul {
 
 /*#endregion*/
 
-/*#region Container and grid*/
+/*#region Container, grid, responsive*/
 .container {
     margin: 0 auto;
     max-width: 889px;
@@ -93,7 +93,41 @@ ul {
     grid-area: main;
 }
 
-@media only screen and (max-width: 900px) {
+/*
+    ##Device = Tablets, iPads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .main-container.has-sidebar {
+        grid-template-columns: auto;
+        grid-template-areas: "main""sidebar";
+    }
+
+    .post-container {
+        margin: 0px 10px 30px;
+    }
+}
+
+/*
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+@media (min-width: 481px) and (max-width: 767px) {
+    .main-container.has-sidebar {
+        grid-template-columns: auto;
+        grid-template-areas: "main""sidebar";
+    }
+
+    .post-container {
+        margin: 0px 10px 30px;
+    }
+}
+
+/*
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+@media (min-width: 320px) and (max-width: 480px) {
     .main-container.has-sidebar {
         grid-template-columns: auto;
         grid-template-areas: "main""sidebar";
