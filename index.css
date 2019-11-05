@@ -1,0 +1,163 @@
+/*#region Default*/
+body {
+    background-color: #fefefe;
+    color: #1d1d1d;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.link {
+    text-decoration: underline;
+}
+
+pre {
+    background: rgba(0, 0, 0, .05);
+    padding: 1em;
+    margin: 0.5em 0;
+    margin-bottom: 0.5em;
+    overflow: auto;
+}
+
+a {
+    color: #1d1d1d;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #1d1d1d;
+}
+
+li:hover {
+    background-color: #eaeaea;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+ol,
+p,
+ul {
+    line-height: 1.5em;
+}
+
+.small-text {
+    font-size: 80%;
+}
+
+.social-icons {
+    fill: #1d1d1d;
+}
+
+/*#endregion*/
+
+/*#region Container and grid*/
+.container {
+    margin: 0 auto;
+    max-width: 889px;
+}
+
+.main-container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+
+.has-sidebar {
+    display: grid;
+    grid-template-columns: 260px auto;
+    grid-column-gap: 50px;
+    grid-template-areas: "sidebar main";
+    max-width: 1200px;
+}
+
+.info-container {
+    grid-area: sidebar;
+    padding-left: 10px;
+    font-size: 1rem;
+    display: block;
+    padding-top: 30px;
+}
+
+.post-container {
+    grid-area: main;
+}
+
+@media only screen and (max-width: 900px) {
+    .main-container.has-sidebar {
+        grid-template-columns: auto;
+        grid-template-areas: "main""sidebar";
+    }
+
+    .post-container {
+        margin: 0px 10px 30px;
+    }
+}
+
+/*#endregion*/
+
+/*#region Info data*/
+.info-img {
+    border-radius: 50%;
+    width: 150px;
+    padding-right: 10px;
+    margin-top: -32px;
+    margin-bottom: 30px;
+}
+
+/*#endregion*/
+
+/*#region Post data*/
+.post-list {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.post {
+    border-bottom: 1px dotted #484848;
+    margin: 0;
+    display: block;
+    padding: 20px 12px;
+}
+
+.post-title {
+    font-size: 21px;
+    display: inline-block;
+    margin: 0;
+    font-weight: 900;
+}
+
+.post-list h4 {
+    font-size: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 1.2;
+}
+
+p.post-description {
+    font-size: 1.2rem;
+}
+
+.date-tag {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-date {
+    text-align: right;
+    display: inline-block;
+    font-size: 18px;
+    padding-top: 8px;
+}
+
+.post-content-separator {
+    text-align: center;
+}
+
+/*#endregion*/
