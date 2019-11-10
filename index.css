@@ -1,8 +1,25 @@
 /*#region Default*/
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
 body {
+    width: 100%;
+    height: 100%;
     background-color: #fefefe;
     color: #1d1d1d;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+#topbar {
+    text-align: center;
+    padding: 5px;
+    color: white;
+    background-color: #1d1d1d;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .link {
@@ -101,10 +118,11 @@ ul {
     .main-container.has-sidebar {
         grid-template-columns: auto;
         grid-template-areas: "main""sidebar";
+        margin: 0px 40px 0px;
     }
 
     .post-container {
-        margin: 0px 10px 30px;
+        margin: 0px 0px 30px;
     }
 }
 
