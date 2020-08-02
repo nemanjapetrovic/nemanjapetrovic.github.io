@@ -64,10 +64,12 @@ ol,
 p,
 ul {
     line-height: 1.5em;
+    text-align: justify;
 }
 
 .small-text {
     font-size: 80%;
+    text-align: justify;
 }
 
 .social-icons {
@@ -79,7 +81,7 @@ ul {
 /*#region Container, grid, responsive*/
 .container {
     margin: 0 auto;
-    max-width: 889px;
+    max-width: 600px;
 }
 
 .main-container {
@@ -103,11 +105,16 @@ ul {
     padding-left: 10px;
     font-size: 1rem;
     display: block;
-    padding-top: 30px;
+}
+
+.post-container-list {
+    grid-area: main;
+    max-width: 889px;
 }
 
 .post-container {
     grid-area: main;
+    max-width: 600px;
 }
 
 /*
@@ -176,6 +183,7 @@ ul {
     display: inline-block;
     margin: 0;
     font-weight: 900;
+    text-align: justify;
 }
 
 .post-list h4 {
@@ -183,6 +191,7 @@ ul {
     padding-top: 10px;
     padding-bottom: 10px;
     line-height: 1.2;
+    text-align: justify;
 }
 
 p.post-description {
