@@ -4,8 +4,8 @@
 <head>
     <link rel="canonical" href="https://nempet.com/mongoose-morgan/mongoose-morgan.html" />
     <meta charset="utf-8">
-    <title>Logging Node.js Express HTTP Requests in a MongoDB Database Using
-        Mongoose-Morgan npm package</title>
+    <title>Logging Node.js Express HTTP Requests in a MongoDB Database Using mongoose-morgan npm
+        package</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- GitHub icon: https://icons8.com/icon/106567/github -->
@@ -14,37 +14,53 @@
     <!-- Medium icon: https://icons8.com/icons/set/m -->
 
     <link rel="stylesheet" type="text/css" href="./../index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" />
 </head>
 
 <body>
     <div id="topbar"></div>
     <div class="container main-container">
         <div class="post-container">
-            <h1 class="post-title">Logging Node.js Express HTTP Requests in a MongoDB Database Using
-                Mongoose-Morgan npm package</h1>
+
+            <h1 class="post-title">Logging Node.js Express HTTP Requests in a MongoDB Database Using mongoose-morgan npm
+                package</h1>
+
             <p class="post-content-separator">---</p>
+
             <p>Recently, I have started using Node.js with Express for all of my personal projects. As we all know,
                 creating a software without any logging is a bad idea so I had to log data from morgan which is an HTTP
                 request logger middleware for express to the database. I found some packages to do this kind of stuff
                 but none of them suitable for me so I created my own.</p>
-            <p>The package is named <b>mongoose-morgan</b>, here is a <a class="link"
+
+            <p>The package is named <strong>mongoose-morgan</strong>, here is a <a
                     href="https://www.npmjs.com/package/mongoose-morgan">link</a>.</p>
-            <p><b>mongoose-morgan</b> is an express middleware which combines mongoose and morgan packages by adding an
-                additional functionality to log morgan data into MongoDB.</p>
-            <h2>Features</h2>
-            <p>mongoose-morgan uses <a class="link" href="https://github.com/expressjs/morgan#options">options</a> and
-                <a class="link" href="https://github.com/expressjs/morgan#predefined-formats">formatting</a> features
-                from
-                morgan
+
+            <p><strong>mongoose-morgan</strong> is an express middleware which combines mongoose and morgan packages by
+                adding an additional functionality to log morgan data into MongoDB.</p>
+
+            <h3>Features</h3>
+
+            <p>mongoose-morgan uses <a href="https://github.com/expressjs/morgan#options">options</a> and <a
+                    href="https://github.com/expressjs/morgan#predefined-formats">formatting</a> features from morgan
                 package. In order to find out what options and formatting features are make sure to check morgan <a
-                    class="link" href="https://github.com/expressjs/morgan">GitHub page</a>.</p>
+                    href="https://github.com/expressjs/morgan">GitHub page</a>.</p>
+
             <p>To save data in MongoDB I used mongoose package as one of the most commonly used.</p>
-            <h2>Usage</h2>
+
+            <h3>Usage</h3>
+
             <p>To install it just call:</p>
-            <pre><code>npm install mongoose-morgan</code></pre>
-            <h2>Basic usage example</h2>
+
+            <pre><code class="language-js">
+npm install mongoose-morgan
+</code></pre>
+
+            <h3>Basic usage example</h3>
+
             <p>Let's create a basic example of express app</p>
-            <pre><code>// express
+
+            <pre><code class="language-js">
+// express
 var express = require('express');
 var app = express();
 
@@ -61,32 +77,44 @@ app.use(mongooseMorgan({
 
 // run
 app.listen(port);
-console.log('works... ' + port);</code></pre>
+console.log('works... ' + port);
+</code></pre>
+
             <p>In this example, we are providing only basic arguments to a mongoose-morgan package. The only requirement
                 is to add a connection string to Mongo database. mongoose-morgan will use basic options and features for
                 morgan logging.</p>
-            <p>It will create a Mongo collection named <b>logs</b> in a logs-db database and a type of
-                formatting for morgan data will be <b>combined</b>.</p>
-            <h2>Detailed usage</h2>
-            <p>The mongoose-morgan is accepting three parameters:
-            <p>
-            <ul>
+
+            <p>It will create a Mongo collection named <em>logs</em> in a logs-db database and a type of formatting for
+                morgan data will be <em>combined</em>.</p>
+
+            <h3>Detailed usage</h3>
+
+            <p>The mongoose-morgan is accepting three parameters:</p>
+
+            <ul style="margin-left: 40px;">
                 <li>mongoData: object type</li>
-                <li>options: object type - <a class="link" href="https://github.com/expressjs/morgan#options">standard
-                        morgan options</a></li>
-                <li>format: string type - <a class="link"
-                        href="https://github.com/expressjs/morgan#predefined-formats">standard morgan format</a>
-                </li>
+                <li>options: object type - <a href="https://github.com/expressjs/morgan#options">standard morgan
+                        options</a></li>
+                <li>format: string type - <a href="https://github.com/expressjs/morgan#predefined-formats">standard
+                        morgan format</a></li>
             </ul>
+
             <p>An example without morgan options:</p>
-            <pre><code>app.use(mongooseMorgan({
+
+            <pre><code class="language-js">
+app.use(mongooseMorgan({
     connectionString: 'mongodb://localhost:27017/logs-db'
    }, {}, 'short'
-));</code></pre>
-            <p>As you can see inside logs-db database this code will create collection named <b>logs</b> and a
-                type of formatting for morgan will be <b>short</b>.</p>
+));
+</code></pre>
+
+            <p>As you can see inside logs-db database this code will create collection named <em>logs</em> and a type of
+                formatting for morgan will be <em>short</em>.</p>
+
             <p>Full example:</p>
-            <pre><code>app.use(mongooseMorgan({
+
+            <pre><code class="language-js">
+app.use(mongooseMorgan({
         collection: 'error_logger',
         connectionString: 'mongodb://localhost:27017/logs-db',
         user: 'admin',
@@ -94,28 +122,40 @@ console.log('works... ' + port);</code></pre>
     },
     {
         skip: function (req, res) {
-            return res.statusCode < 400;
+            return res.statusCode &lt; 400;
         }
     },
         'dev'
-));</code></pre>
-            <p>In this detailed example, we define MongoDB collection name, username, and password. For morgan
-                options, we defined a function which will filter response status codes and if the status code is
-                lower than 400 it won't save the request in the database. As for the type of formatting, we are
-                using <b>dev</b> format.</p>
+));
+</code></pre>
+
+            <p>In this detailed example, we define MongoDB collection name, username, and password. For morgan options,
+                we defined a function which will filter response status codes and if the status code is lower than 400
+                it won't save the request in the database. As for the type of formatting, we are using <em>dev</em>
+                format.</p>
+
             <p class="post-content-separator">---</p>
-            <p>If you are using morgan package for logging requests in a console you can easily setup your
-                project
-                to log all requests with filtering in a Mongo database by using mongoose-morgan package.</p>
-            <p>The source code of this library can be found inside the <a class="link"
-                    href="https://github.com/nemanjapetrovic/mongoose-morgan">GitHub repository</a>. All
-                contributions are very welcome.</p>
-            <p>In the end, I tried to make this library helpful and give something back to the open-source
-                community. If you have thoughts on this you can find me on <a class="link"
-                    href="https://twitter.com/nem_pet">Twitter</a> and <a class="link"
+
+            <p>If you are using morgan package for logging requests in a console you can easily setup your project to
+                log all requests with filtering in a Mongo database by using mongoose-morgan package.</p>
+
+            <p>The source code of this library can be found inside the <a
+                    href="https://github.com/nemanjapetrovic/mongoose-morgan">GitHub repository</a>. All contributions
+                are very welcome.</p>
+
+            <p>In the end, I tried to make this library helpful and give something back to the open-source community. If
+                you have thoughts on this you can find me on <a href="https://twitter.com/nem_pet">Twitter</a> and <a
                     href="https://www.linkedin.com/in/nempet/">LinkedIn</a>.</p>
+
+            <p class="post-content-separator">---</p>
+
+            <a href="https://nempet.com"> &larr; Back</a>
         </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"></script>
 </body>
 
 </html>

@@ -8,7 +8,7 @@ The package is named **mongoose-morgan**, here is a [link](https://www.npmjs.com
 
 ## Features
 
-mongoose-morgan uses options and formatting features from morgan package. In order to find out what options and formatting features are make sure to check morgan GitHub page.
+mongoose-morgan uses [options](https://github.com/expressjs/morgan#options) and [formatting](https://github.com/expressjs/morgan#predefined-formats) features from morgan package. In order to find out what options and formatting features are make sure to check morgan [GitHub page](https://github.com/expressjs/morgan).
 
 To save data in MongoDB I used mongoose package as one of the most commonly used.
 
@@ -54,8 +54,8 @@ It will create a Mongo collection named *logs* in a logs-db database and a type 
 The mongoose-morgan is accepting three parameters:
 
 - mongoData: object type
-- options: object type - standard morgan options
-- format: string type - standard morgan format
+- options: object type - [standard morgan options](https://github.com/expressjs/morgan#options)
+- format: string type - [standard morgan format](https://github.com/expressjs/morgan#predefined-formats)
 
 An example without morgan options:
 
