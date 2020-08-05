@@ -9,8 +9,13 @@
 
 <url>
   <loc>https://nempet.com/</loc>
-  <lastmod>2020-08-05T14:00:12+00:00</lastmod>
+  <lastmod>2020-08-05T14:12:39+00:00</lastmod>
   <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://nempet.com/mongoose-morgan/mongoose-morgan.html</loc>
+  <lastmod>2020-08-05T14:12:39+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 
 

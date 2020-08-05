@@ -124,7 +124,6 @@ code[class*="language-"], pre[class*="language-"] {
 
 .info-container {
     grid-area: sidebar;
-    padding-left: 10px;
     font-size: 1rem;
     display: block;
 }
