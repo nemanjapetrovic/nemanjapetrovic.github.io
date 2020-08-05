@@ -1,18 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7">
+    <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8">
+    <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9">
+    <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en-US">
+<!--<![endif]-->
 
 <head>
-    <link rel="canonical" href="https://nempet.com/mongoose-morgan/mongoose-morgan.html" />
-    <meta charset="utf-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Logging Node.js Express HTTP Requests in a MongoDB Database Using mongoose-morgan npm
         package</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+    <!-- style and script resources -->
     <link rel="stylesheet" type="text/css" href="./../index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" />
+    <!--meta properties -->
+    <meta name="description"
+        content="Recently, I have started using Node.js with Express for all of my personal projects. As we all know, creating a software without any logging is a bad idea so I had to log data from morgan which is an HTTP request logger middleware for express to the database. I found some packages to do this kind of stuff but none of them suitable for me so I created my own." />
+    <!--detailed robots meta https://developers.google.com/search/reference/robots_meta_tag -->
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://nempet.com/mongoose-morgan/mongoose-morgan.html" />
+    <!--open graph meta tags for social sites and search engines-->
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Logging Node.js Express HTTP Requests in a MongoDB Database Using mongoose-morgan npm package" />
+    <meta property="og:description"
+        content="Recently, I have started using Node.js with Express for all of my personal projects. As we all know, creating a software without any logging is a bad idea so I had to log data from morgan which is an HTTP request logger middleware for express to the database. I found some packages to do this kind of stuff but none of them suitable for me so I created my own." />
+    <meta property="og:url" content="https://nempet.com/mongoose-morgan/mongoose-morgan.html" />
+    <meta property="og:site_name" content="nempet.com" />
+    <meta property="og:image" content="https://unsplash.com/photos/w7ZyuGYNpRQ" />
+    <meta property="og:image:secure_url" content="https://unsplash.com/photos/w7ZyuGYNpRQ" />
+    <meta property="og:image:width" content="3353" />
+    <meta property="og:image:height" content="2514" />
+    <!--twitter description-->
+    <meta name="twitter:card" content="https://nempet.com/mongoose-morgan/mongoose-morgan.html" />
+    <meta name="twitter:title" content="Logging Node.js Express HTTP Requests in a MongoDB Database Using mongoose-morgan npm package" />
+    <meta name="twitter:description"
+        content="Recently, I have started using Node.js with Express for all of my personal projects. As we all know, creating a software without any logging is a bad idea so I had to log data from morgan which is an HTTP request logger middleware for express to the database. I found some packages to do this kind of stuff but none of them suitable for me so I created my own." />
+    <meta name="twitter:site" content="nempet.com" />
+    <meta name="twitter:image" content="https://unsplash.com/photos/w7ZyuGYNpRQ" />
+    <meta name="twitter:creator" content="nempet.com" />
+    <!-- Site fevicon icons -->
+    <link rel="icon" href="https://s.gravatar.com/avatar/60d2c3020ca3f9dd56043086bd2f860d?s=32" sizes="32x32" />
+    <link rel="icon" href="https://s.gravatar.com/avatar/60d2c3020ca3f9dd56043086bd2f860d?s=192" sizes="192x192" />
+    <link rel="apple-touch-icon-precomposed"
+        href="https://s.gravatar.com/avatar/60d2c3020ca3f9dd56043086bd2f860d?s=180" />
+    <meta name="msapplication-TileImage"
+        content="https://s.gravatar.com/avatar/60d2c3020ca3f9dd56043086bd2f860d?s=270" />
 </head>
 
 <body>
+    <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
     <div id="topbar"></div>
     <div class="container main-container">
         <div class="post-container">
