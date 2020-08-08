@@ -13,6 +13,17 @@
 <!--<![endif]-->
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-174968281-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-174968281-1');
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,7 +41,8 @@
     <!--open graph meta tags for social sites and search engines-->
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Logging Node.js Express HTTP Requests in a MongoDB Database Using mongoose-morgan npm package" />
+    <meta property="og:title"
+        content="Logging Node.js Express HTTP Requests in a MongoDB Database Using mongoose-morgan npm package" />
     <meta property="og:description"
         content="Recently, I have started using Node.js with Express for all of my personal projects. As we all know, creating a software without any logging is a bad idea so I had to log data from morgan which is an HTTP request logger middleware for express to the database. I found some packages to do this kind of stuff but none of them suitable for me so I created my own." />
     <meta property="og:url" content="https://nempet.com/mongoose-morgan/mongoose-morgan.html" />
@@ -41,7 +53,8 @@
     <meta property="og:image:height" content="2514" />
     <!--twitter description-->
     <meta name="twitter:card" content="https://nempet.com/mongoose-morgan/mongoose-morgan.html" />
-    <meta name="twitter:title" content="Logging Node.js Express HTTP Requests in a MongoDB Database Using mongoose-morgan npm package" />
+    <meta name="twitter:title"
+        content="Logging Node.js Express HTTP Requests in a MongoDB Database Using mongoose-morgan npm package" />
     <meta name="twitter:description"
         content="Recently, I have started using Node.js with Express for all of my personal projects. As we all know, creating a software without any logging is a bad idea so I had to log data from morgan which is an HTTP request logger middleware for express to the database. I found some packages to do this kind of stuff but none of them suitable for me so I created my own." />
     <meta name="twitter:site" content="nempet.com" />
